@@ -1,7 +1,38 @@
-{% extends 'base.html' %}
-
-{% block titulo %} login {% endblock %}
-
-{% block contenido %}
- sesion login
-{% endblock %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de José Pediatra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-pic">
+                <img src="img/profile-pic-placeholder.png" alt="Jose Pediatra">
+            </div>
+            <h1>Jose Pediatra</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="search">
+            <button>🔍</button>
+        </div>
+        <div class="publicaciones">
+            <h2>Publicaciones</h2>
+            <h3>Información</h3>
+            <div class="info">
+                <p><img src="img/email-icon.png" alt="Email Icon"> tucorreo@gmail.com</p>
+                <p><img src="img/phone-icon.png" alt="Phone Icon"> 3333333333</p>
+                <p><img src="img/instagram-icon.png" alt="Instagram Icon"> pediatra_jose</p>
+                <p><img src="img/facebook-icon.png" alt="Facebook Icon"> Jose Pediatra</p>
+            </div>
+        </div>
+        <div class="about">
+            <h3>Jose Pediatra</h3>
+            <p>¡Hola! soy José, profesional certificado en pediatría desde hace 20 años, con</p>
+            <img src="img/doctor-child.jpg" alt="Doctor ">
+        </div>
+    </div>
+</body>
+</html>
