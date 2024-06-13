@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,6 +13,8 @@
             background-color: #006064;
             margin: 0;
             padding: 0;
+            position: relative; /* Agregado */
+            min-height: 100vh; /* Agregado */
         }
         .navbar {
             background-color: #004D40;
@@ -24,6 +25,7 @@
             padding: 30px;
             text-align: center;
             margin-top: 50px;
+            margin-bottom: 80px; /* Ajuste para dar espacio al botón de cerrar sesión */
         }
         .profile-pic img {
             width: 100px;
@@ -51,6 +53,12 @@
         .stats span {
             font-weight: bold;
         }
+        /* Estilos para el botón de cerrar sesión */
+        .logout-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px; /* Ajuste para moverlo hacia la derecha */
+        }
     </style>
 </head>
 <body>
@@ -70,7 +78,7 @@
             <img src="https://www.sonicseo.com/wp-content/uploads/2020/07/surgeon.jpg" alt="Usuario">
         </div>
         <h2>Jose Pediatra</h2>
-        <button class="follow-btn">Nueva Publicaciòn</button>
+        <button class="follow-btn">Nueva Publicación</button>
         <div class="row stats">
             <div class="col-md-4">
                 <span>Publicaciones</span>
@@ -88,6 +96,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Botón de cerrar sesión -->
+    <button class="btn btn-outline-light logout-btn">Cerrar Sesión</button>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
