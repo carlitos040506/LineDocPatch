@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .calendar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .calendar .month {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .calendar .month h3 {
+            margin: 0;
+        }
+        .calendar .weekdays, .calendar .days {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .calendar .weekdays div, .calendar .days div {
+            width: calc(100% / 7);
+            text-align: center;
+            padding: 10px 0;
+        }
+        .calendar .weekdays {
+            background-color: #ddd;
+        }
+        .calendar .days div {
+            border: 1px solid #ddd;
+            margin: -1px 0 0 -1px;
+        }
+        .calendar .days div:hover {
+            background-color: #eee;
+            cursor: pointer;
+        }
+        .calendar .days .today {
+            background-color: #36BEE7;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <div class="month">
+            <button id="prev" class="btn btn-outline-primary">&lt;</button>
+            <h3 id="month-year"></h3>
+            <button id="next" class="btn btn-outline-primary">&gt;</button>
+        </div>
+        <div class="weekdays">
+            <div>Dom</div>
+            <div>Lun</div>
+            <div>Mar</div>
+            <div>Mié</div>
+            <div>Jue</div>
+            <div>Vie</div>
+            <div>Sáb</div>
+        </div>
+        <div class="days" id="days"></div>
+    </div>
+    <script>
+        const currentDate = new Date();
+        let currentMonth = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
+
+        const monthYear = document.getElementById('month-year');
+        const days = document.getElementById('days');
+
+        const months = [
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+
+        function renderCalendar(month, year) {
+            days.innerHTML = '';
+
+            const firstDay = new Date(year, month).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                days.innerHTML += '<div></div>';
+            }
+
+            for (let date = 1; date <= lastDate; date++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.textContent = date;
+                if (date === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear()) {
+                    dayDiv.classList.add('today');
+                }
+                days.appendChild(dayDiv);
+            }
+
+            monthYear.textContent = ${months[month]} ${year};
+        }
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            renderCalendar(currentMonth, currentYear);
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            renderCalendar(currentMonth, currentYear);
+        });
+
+        renderCalendar(currentMonth, currentYear);
+    </script>
+</body>
+</html>

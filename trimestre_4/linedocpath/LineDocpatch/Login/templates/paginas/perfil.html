@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block titulo %} perfil {% endblock %}
@@ -33,3 +34,101 @@
  <div class="card-foodter tex-muted">Footer</div>
  </div>
 {% endblock %}
+=======
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome para los íconos -->
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #006064;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #004D40;
+        }
+        .profile-container {
+            background-color: #ECEFF1;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .profile-pic img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid #337a88;
+        }
+        .follow-btn {
+            background-color: #116d51;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+        .follow-btn:hover {
+            background-color: #45A049;
+        }
+        .stats {
+            margin-top: 20px;
+        }
+        .stats div {
+            font-size: 18px;
+        }
+        .stats span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Inicio</a>
+            <a class="navbar-brand" href="#">Mi Perfil</a>
+            <form class="form-inline ml-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar usuarios" aria-label="Buscar">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container profile-container">
+        <div class="profile-pic">
+            <img src="https://www.sonicseo.com/wp-content/uploads/2020/07/surgeon.jpg" alt="Usuario">
+        </div>
+        <h2>Jose Pediatra</h2>
+        <button class="follow-btn">Nueva Publicaciòn</button>
+        <div class="row stats">
+            <div class="col-md-4">
+                <span>Publicaciones</span>
+                
+            </div>
+            <div class="col-md-4">
+                <span>Descripción</span>
+                <div>Medico Certificado en pediatria con especializaciòn en Neatologìa</div>
+            </div>
+            <div class="col-md-4">
+                <span>Información</span>
+                <div>Telefono</div>
+                <div>Email</div>
+                <div>Instagram</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+>>>>>>> efd87c475156f5f771a6598395c1db267a9e4ae9
