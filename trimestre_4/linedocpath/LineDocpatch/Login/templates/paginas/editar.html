@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(150deg, #00384a, #58F0CE);
+            color: #060606;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container {
+            background: linear-gradient(150deg, #163641, #22927a);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 800px;
+        }
+        .btn-primary {
+            background-color: #29d196;
+            border: none;
+            margin-right: 10px; /* Espacio entre botones */
+        }
+        .btn-primary:hover {
+            background-color: #159363;
+        }
+        .btn-secondary {
+            background-color: #dd2638; /* Cambio de color para el botón de eliminar */
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: #c82839;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Editar Perfil</h2>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombres</label>
+                <input type="text" class="form-control" id="nombres" placeholder="Nombres">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Apellidos</label>
+                <input type="text" class="form-control" id="Apellidos" placeholder="Apellidos">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="Nombre de Usuario">Nombre de Usuario</label>
+                <input type="text" class="form-control" id="Nombre de Usuario" placeholder="Nombre de Usuario">
+            </div>
+            <div class="form-group">
+                <label for="telefono">Número de teléfono</label>
+                <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
+            </div>
+            <div class="form-group">
+                <label for="genero">Género</label>
+                <select class="form-control" id="genero">
+                    <option>Mujer</option>
+                    <option>Hombre</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cumpleaños">Fecha de Nacimiento</label>
+                <div class="d-flex">
+                    <select class="form-control mr-2" id="dia">
+                        <!-- Días del 1 al 31 -->
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                document.write('<option>' + i + '</option>');
+                            }
+                        </script>
+                    </select>
+                    <select class="form-control mr-2" id="mes">
+                        <option value="1">enero</option>
+                        <option value="2">febrero</option>
+                        <option value="3">marzo</option>
+                        <option value="4">abril</option>
+                        <option value="5">mayo</option>
+                        <option value="6">junio</option>
+                        <option value="7">julio</option>
+                        <option value="8">agosto</option>
+                        <option value="9">septiembre</option>
+                        <option value="10">octubre</option>
+                        <option value="11">noviembre</option>
+                        <option value="12">diciembre</option>
+                    </select>
+                    <select class="form-control" id="año">
+                        <!-- Años desde 1900 hasta el presente -->
+                        <script>
+                            const currentYear = new Date().getFullYear();
+                            for (let i = 1900; i <= currentYear; i++) {
+                                document.write('<option>' + i + '</option>');
+                            }
+                        </script>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="biografia">Descripciòn</label>
+                <textarea class="form-control" id="biografia" rows="3" placeholder="Descripciòn"></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary">Eliminar cuenta</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
